@@ -1,0 +1,50 @@
+{
+  "timestamp_utc": "2026-11-21T22:03:14.233634+00:00",
+  "vm": "pi412-block2",
+  "vm_type": "vz",
+  "arch": "x86_64",
+  "mounts": [],
+  "port_forwards": [
+    {
+      "guestIPMustBeZero": false,
+      "guestIP": "127.0.0.1",
+      "guestPort": 8140,
+      "guestPortRange": [
+        8140,
+        8140
+      ],
+      "hostIP": "127.0.0.1",
+      "hostPort": 8140,
+      "hostPortRange": [
+        8140,
+        8140
+      ],
+      "proto": "any"
+    },
+    {
+      "guestIPMustBeZero": false,
+      "guestIP": "0.0.0.0",
+      "guestPortRange": [
+        1,
+        65535
+      ],
+      "hostIP": "127.0.0.1",
+      "hostPortRange": [
+        1,
+        65535
+      ],
+      "proto": "any",
+      "ignore": true
+    }
+  ],
+  "guest_checks": {
+    "python": "Python 3.12.3",
+    "host_home_present": false,
+    "agent_user": "uid=1000(incidentlab) gid=1001(incidentlab) groups=1001(incidentlab)",
+    "agent_sudo_returncode": 1,
+    "agent_can_write_workspace": true,
+    "egress_locked": false,
+    "fts5": true
+  },
+  "scope": "Development VM prerequisites; agent workflow and egress lockdown are pending"
+}

@@ -1,0 +1,196 @@
+{
+  "scope": "Development readiness only; 3 hand-written cases per model, no intelligence ranking claims",
+  "timestamp_utc": "2026-11-21T21:52:38.942170+00:00",
+  "platform": "macOS-26.3.1-x86_64-i386-64bit",
+  "runs": [
+    {
+      "model": "qwen",
+      "family": "Qwen",
+      "case": "extract",
+      "prompt": "Read this data: service=checkout, errors=17. Return only the service name in answer.",
+      "expected": "checkout",
+      "answer": {
+        "answer": "checkout"
+      },
+      "raw_output": "{\"answer\": \"checkout\"}",
+      "usage": {
+        "completion_tokens": 7,
+        "prompt_tokens": 54,
+        "total_tokens": 61,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        }
+      },
+      "latency_ms": 883.95,
+      "passed": true
+    },
+    {
+      "model": "qwen",
+      "family": "Qwen",
+      "case": "evidence",
+      "prompt": "Given only: CPU=20%, database connections=100/100, log=database connection timeout. Choose the strongest supported issue: database or CPU. Return database or CPU in answer.",
+      "expected": "database",
+      "answer": {
+        "answer": "database"
+      },
+      "raw_output": "{\"answer\": \"database\"}",
+      "usage": {
+        "completion_tokens": 7,
+        "prompt_tokens": 75,
+        "total_tokens": 82,
+        "prompt_tokens_details": {
+          "cached_tokens": 21
+        }
+      },
+      "latency_ms": 801.32,
+      "passed": true
+    },
+    {
+      "model": "qwen",
+      "family": "Qwen",
+      "case": "abstain",
+      "prompt": "The only evidence is 'the API failed'. What is the exact root cause? If evidence is insufficient, put unknown in answer. Do not invent details.",
+      "expected": "unknown",
+      "answer": {
+        "answer": "The API failed due to a missing or invalid authentication token."
+      },
+      "raw_output": "{\n  \"answer\": \"The API failed due to a missing or invalid authentication token.\"\n}",
+      "usage": {
+        "completion_tokens": 22,
+        "prompt_tokens": 64,
+        "total_tokens": 86,
+        "prompt_tokens_details": {
+          "cached_tokens": 21
+        }
+      },
+      "latency_ms": 1683.88,
+      "passed": false
+    },
+    {
+      "model": "liquid",
+      "family": "LFM",
+      "case": "extract",
+      "prompt": "Read this data: service=checkout, errors=17. Return only the service name in answer.",
+      "expected": "checkout",
+      "answer": {
+        "answer": "checkout"
+      },
+      "raw_output": "{\"answer\": \"checkout\"}",
+      "usage": {
+        "completion_tokens": 9,
+        "prompt_tokens": 51,
+        "total_tokens": 60,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        }
+      },
+      "latency_ms": 2325.03,
+      "passed": true
+    },
+    {
+      "model": "liquid",
+      "family": "LFM",
+      "case": "evidence",
+      "prompt": "Given only: CPU=20%, database connections=100/100, log=database connection timeout. Choose the strongest supported issue: database or CPU. Return database or CPU in answer.",
+      "expected": "database",
+      "answer": {
+        "answer": "database"
+      },
+      "raw_output": "{\"answer\": \"database\"}",
+      "usage": {
+        "completion_tokens": 9,
+        "prompt_tokens": 68,
+        "total_tokens": 77,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        }
+      },
+      "latency_ms": 2338.43,
+      "passed": true
+    },
+    {
+      "model": "liquid",
+      "family": "LFM",
+      "case": "abstain",
+      "prompt": "The only evidence is 'the API failed'. What is the exact root cause? If evidence is insufficient, put unknown in answer. Do not invent details.",
+      "expected": "unknown",
+      "answer": {
+        "answer": "unknown"
+      },
+      "raw_output": "{\n  \"answer\": \"unknown\"\n}",
+      "usage": {
+        "completion_tokens": 10,
+        "prompt_tokens": 61,
+        "total_tokens": 71,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        }
+      },
+      "latency_ms": 2516.54,
+      "passed": true
+    },
+    {
+      "model": "smol",
+      "family": "SmolLM",
+      "case": "extract",
+      "prompt": "Read this data: service=checkout, errors=17. Return only the service name in answer.",
+      "expected": "checkout",
+      "answer": {
+        "answer": "checkout"
+      },
+      "raw_output": "{\"answer\": \"checkout\"}",
+      "usage": {
+        "completion_tokens": 7,
+        "prompt_tokens": 87,
+        "total_tokens": 94,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        }
+      },
+      "latency_ms": 3433.47,
+      "passed": true
+    },
+    {
+      "model": "smol",
+      "family": "SmolLM",
+      "case": "evidence",
+      "prompt": "Given only: CPU=20%, database connections=100/100, log=database connection timeout. Choose the strongest supported issue: database or CPU. Return database or CPU in answer.",
+      "expected": "database",
+      "answer": {
+        "answer": "database"
+      },
+      "raw_output": "{\n  \"answer\": \"database\"\n}",
+      "usage": {
+        "completion_tokens": 14,
+        "prompt_tokens": 104,
+        "total_tokens": 118,
+        "prompt_tokens_details": {
+          "cached_tokens": 58
+        }
+      },
+      "latency_ms": 3146.94,
+      "passed": true
+    },
+    {
+      "model": "smol",
+      "family": "SmolLM",
+      "case": "abstain",
+      "prompt": "The only evidence is 'the API failed'. What is the exact root cause? If evidence is insufficient, put unknown in answer. Do not invent details.",
+      "expected": "unknown",
+      "answer": {
+        "answer": "unknown"
+      },
+      "raw_output": "{\n  \"answer\": \"unknown\"\n}",
+      "usage": {
+        "completion_tokens": 14,
+        "prompt_tokens": 98,
+        "total_tokens": 112,
+        "prompt_tokens_details": {
+          "cached_tokens": 58
+        }
+      },
+      "latency_ms": 3266.58,
+      "passed": true
+    }
+  ]
+}

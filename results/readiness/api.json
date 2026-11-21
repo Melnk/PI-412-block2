@@ -1,0 +1,76 @@
+{
+  "/health": {
+    "status": 200,
+    "body": {
+      "status": "ok",
+      "stage": "development-foundation",
+      "workflow_implemented": false
+    }
+  },
+  "/models": {
+    "status": 200,
+    "body": {
+      "engine": "llama.cpp b12359",
+      "roles": {
+        "planner": "qwen",
+        "analyst": "liquid",
+        "validator": "smol"
+      },
+      "models": [
+        {
+          "id": "qwen",
+          "family": "Qwen",
+          "display_name": "Qwen3.5 0.8B Q4_0",
+          "filename": "Qwen3.5-0.8B-Q4_0.gguf",
+          "base_url": "http://127.0.0.1:8121"
+        },
+        {
+          "id": "liquid",
+          "family": "LFM",
+          "display_name": "LFM2.5 1.2B Instruct Q8_0",
+          "filename": "LFM2.5-1.2B-Instruct-Q8_0.gguf",
+          "base_url": "http://127.0.0.1:8122"
+        },
+        {
+          "id": "smol",
+          "family": "SmolLM",
+          "display_name": "SmolLM3 3B Q4_K_M",
+          "filename": "SmolLM3-Q4_K_M.gguf",
+          "base_url": "http://127.0.0.1:8123"
+        }
+      ]
+    }
+  },
+  "/readiness": {
+    "status": 200,
+    "body": {
+      "models_ready": true,
+      "models": [
+        {
+          "id": "qwen",
+          "ready": true,
+          "latency_ms": 27.68
+        },
+        {
+          "id": "liquid",
+          "ready": true,
+          "latency_ms": 27.75
+        },
+        {
+          "id": "smol",
+          "ready": true,
+          "latency_ms": 27.12
+        }
+      ],
+      "workflow_implemented": false
+    }
+  },
+  "/metrics": {
+    "status": 200,
+    "body": "valid response"
+  },
+  "/openapi.json": {
+    "status": 200,
+    "body": "valid response"
+  }
+}

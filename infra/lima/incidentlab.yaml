@@ -1,0 +1,41 @@
+# Dedicated development VM; no host home or project mounts.
+# Outbound network remains enabled during dependency setup. Lockdown is a later verified stage.
+minimumLimaVersion: 2.0.0
+vmType: vz
+arch: x86_64
+images:
+  - location: https://cloud-images.ubuntu.com/releases/noble/release-20260705/ubuntu-24.04-server-cloudimg-amd64.img
+    arch: x86_64
+    digest: sha256:ffe6203da54deeb6db5d2a98a83f9ec8e55f149d3f7ba622e1abe5fa966ee3d6
+cpus: 4
+memory: 8GiB
+disk: 30GiB
+mounts: []
+containerd:
+  system: false
+  user: false
+ssh:
+  loadDotSSHPubKeys: false
+  forwardAgent: false
+portForwards:
+  - guestPort: 8140
+    hostPort: 8140
+    hostIP: 127.0.0.1
+  - guestIP: 0.0.0.0
+    guestIPMustBeZero: false
+    proto: any
+    ignore: true
+provision:
+  - mode: system
+    script: |
+      #!/bin/sh
+      set -eu
+      apt-get update
+      DEBIAN_FRONTEND=noninteractive apt-get install -y python3-venv python3-pip git curl cmake build-essential libgomp1
+      if ! id incidentlab >/dev/null 2>&1; then
+        useradd --create-home --shell /bin/bash incidentlab
+      fi
+      mkdir -p /opt/incidentlab
+      chown incidentlab:incidentlab /opt/incidentlab
+message: |
+  IncidentLab development VM prepared. Enter: limactl shell pi412-block2

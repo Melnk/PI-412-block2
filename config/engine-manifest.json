@@ -1,0 +1,6 @@
+{
+  "release": "b12359",
+  "url": "https://github.com/ggml-org/llama.cpp/releases/download/b12359/llama-b12359-bin-macos-x64.tar.gz",
+  "sha256": "25320d529077ef5a3d16e7b5da26438f221d88c8c0930a32b0c79457f5eede56",
+  "vendor_digest": "sha256:25320d529077ef5a3d16e7b5da26438f221d88c8c0930a32b0c79457f5eede56"
+}

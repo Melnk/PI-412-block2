@@ -1,0 +1,29 @@
+[
+  {
+    "name": "qwen",
+    "repository": "ggml-org/Qwen3.5-0.8B-GGUF",
+    "revision": "004fd086eccea9f7cf867aa07ba328773beef81d",
+    "filename": "Qwen3.5-0.8B-Q4_0.gguf",
+    "sha256": "57d1997790d1744fba5b40a7317df71ea5e2acee28c47e78f0cce39c0703f8cf",
+    "bytes": 563036064,
+    "source": "https://huggingface.co/ggml-org/Qwen3.5-0.8B-GGUF"
+  },
+  {
+    "name": "liquid",
+    "repository": "LiquidAI/LFM2.5-1.2B-Instruct-GGUF",
+    "revision": "8ed288026e23958ad9dfa92d53ed773a8eee7125",
+    "filename": "LFM2.5-1.2B-Instruct-Q8_0.gguf",
+    "sha256": "f6b981dcb86917fa463f78a362320bd5e2dc45445df147287eedb85e5a30d26a",
+    "bytes": 1246253888,
+    "source": "https://huggingface.co/LiquidAI/LFM2.5-1.2B-Instruct-GGUF"
+  },
+  {
+    "name": "smol",
+    "repository": "ggml-org/SmolLM3-3B-GGUF",
+    "revision": "4965cb60b150737b68a0408c36aeefb65078f894",
+    "filename": "SmolLM3-Q4_K_M.gguf",
+    "sha256": "8334b850b7bd46238c16b0c550df2138f0889bf433809008cc17a8b05761863e",
+    "bytes": 1915305312,
+    "source": "https://huggingface.co/ggml-org/SmolLM3-3B-GGUF"
+  }
+]
