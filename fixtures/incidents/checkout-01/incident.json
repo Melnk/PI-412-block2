@@ -1,0 +1,9 @@
+{
+  "id": "checkout-01",
+  "title": "Очередь запросов checkout",
+  "service": "checkout",
+  "description": "Checkout returns many 500 responses since 10:00.",
+  "window_start": "2026-11-20T09:40:00Z",
+  "window_end": "2026-11-20T10:10:00Z",
+  "synthetic": true
+}

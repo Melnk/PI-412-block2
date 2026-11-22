@@ -1,0 +1,11 @@
+{
+  "available": true,
+  "records": [
+    {
+      "id": "m01",
+      "source": "metrics",
+      "timestamp": "2026-11-20T10:01:00Z",
+      "text": "Database pool active=100, maximum=100, waiting requests=42. CPU=20%. HTTP error rate=40%."
+    }
+  ]
+}

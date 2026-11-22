@@ -56,4 +56,6 @@ python3 -m venv .venv
 OpenTelemetry SDK и HTTP exporter установлены. API уже отдаёт `/metrics`; llama-server запускается с `--metrics`.
 Подготовлены `observability/prometheus.yml` и `observability/grafana-datasource.yml`.
 Phoenix устанавливается через `pip install -e '.[observability]'` предпочтительно внутри Linux.
-Phoenix/Prometheus/Grafana пока не развёрнуты: скриншотов заполненных дашбордов и полноценных agent traces ещё нет.
+Реальные spans первого сценария сохраняются локальным JSONL exporter в results/live/spans.jsonl и входят в JSON результата.
+Phoenix/Prometheus/Grafana пока не развёрнуты: скриншотов заполненных дашбордов ещё нет.
+Набор из четырёх моделей проверяется на хосте с 32 GiB RAM; достаточность 8 GiB гостевой VM для него ещё не измерена.

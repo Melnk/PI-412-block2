@@ -1,0 +1,30 @@
+{
+  "scope": "Five hand-written synthetic integration scenarios, not a held-out benchmark",
+  "cases": [
+    {
+      "incident_id": "checkout-01",
+      "expected_cause": "database_pool_exhaustion",
+      "expected_status": "supported"
+    },
+    {
+      "incident_id": "checkout-02",
+      "expected_cause": "deployment_regression",
+      "expected_status": "supported"
+    },
+    {
+      "incident_id": "checkout-03",
+      "expected_cause": "unknown",
+      "expected_status": "insufficient_evidence"
+    },
+    {
+      "incident_id": "checkout-04",
+      "expected_cause": "database_pool_exhaustion",
+      "expected_status": "supported"
+    },
+    {
+      "incident_id": "checkout-05",
+      "expected_cause": "application_error",
+      "expected_status": "supported"
+    }
+  ]
+}

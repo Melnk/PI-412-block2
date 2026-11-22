@@ -2,6 +2,7 @@
 import json
 import platform
 from datetime import datetime, timezone
+from uuid import uuid4
 
 from pydantic import BaseModel, ConfigDict
 
@@ -22,10 +23,15 @@ CASES = [
 
 
 def main():
+    settings = load_settings()
+    folder = ROOT / "results/readiness/smoke-runs"
+    folder.mkdir(parents=True, exist_ok=True)
+    path = folder / (datetime.now(timezone.utc).strftime("%Y%m%dT%H%M%SZ") + "-" + uuid4().hex[:6] + ".json")
     rows = []
-    for model in load_settings().models:
+    for model in settings.models:
         for case in CASES:
             row = {"model": model.id, "family": model.family, "case": case["id"],
+                   "weight_file": model.filename,
                    "prompt": case["prompt"], "expected": case["expected"]}
             try:
                 result = LocalLLM(model).json_reply("Follow the request. Use only the supplied facts. Return the required JSON object.",
@@ -35,12 +41,15 @@ def main():
                 row["passed"] = parsed.answer.strip().lower() == case["expected"].lower()
             except (LLMError, ValueError) as error:
                 row.update(passed=False, error=str(error))
+                if isinstance(error, LLMError) and error.details:
+                    row["failure_details"] = error.details
             rows.append(row)
+            output = {"scope": "Development readiness only; 3 hand-written cases per model, no intelligence ranking claims",
+                      "timestamp_utc": datetime.now(timezone.utc).isoformat(), "platform": platform.platform(),
+                      "engine": settings.engine, "runs": rows}
+            path.write_text(json.dumps(output, indent=2, ensure_ascii=False) + "\n")
             print(json.dumps({k: row.get(k) for k in ["model", "case", "passed", "latency_ms", "answer", "error"]}), flush=True)
-    output = {"scope": "Development readiness only; 3 hand-written cases per model, no intelligence ranking claims",
-              "timestamp_utc": datetime.now(timezone.utc).isoformat(), "platform": platform.platform(), "runs": rows}
-    path = ROOT / "results/readiness/llm-smoke.json"
-    path.write_text(json.dumps(output, indent=2, ensure_ascii=False)+"\n")
+    print("Saved:", path)
     raise SystemExit(0 if all(row["passed"] for row in rows) else 1)
 
 

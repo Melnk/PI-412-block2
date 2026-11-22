@@ -1,0 +1,9 @@
+{
+  "id": "checkout-03",
+  "title": "Неясный сбой checkout",
+  "service": "checkout",
+  "description": "An API request failed. There are no further details in the report.",
+  "window_start": "2026-11-20T09:40:00Z",
+  "window_end": "2026-11-20T10:10:00Z",
+  "synthetic": true
+}

@@ -1,0 +1,11 @@
+{
+  "available": true,
+  "records": [
+    {
+      "id": "l01",
+      "source": "logs",
+      "timestamp": "2026-11-20T10:01:00Z",
+      "text": "One request returned HTTP 500. No exception details or root-cause information were captured."
+    }
+  ]
+}

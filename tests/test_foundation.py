@@ -76,8 +76,9 @@ def test_transport_enforces_budget_and_keeps_model_metadata():
 def test_invalid_model_output_does_not_pass_as_success(body):
     def respond(_):
         return httpx.Response(200, json={"choices": [{"finish_reason": "stop", "message": {"content": body}}]})
-    with pytest.raises(LLMError):
+    with pytest.raises(LLMError) as exc:
         LocalLLM(load_settings().model("qwen"), transport=httpx.MockTransport(respond)).json_reply("", "", {})
+    assert exc.value.details["raw_output"] == body
 
 
 def test_truncated_generation_rejected():
@@ -87,13 +88,14 @@ def test_truncated_generation_rejected():
         LocalLLM(load_settings().model("qwen"), transport=httpx.MockTransport(respond)).json_reply("", "", {})
 
 
-def test_health_describes_foundation_honestly():
+def test_health_reports_connected_scenario():
     response = TestClient(app).get("/health")
     assert response.status_code == 200
-    assert response.json()["workflow_implemented"] is False
+    assert response.json()["workflow_implemented"] is True
+    assert response.json()["stage"] == "first-connected-scenario"
 
 
 def test_models_route_exposes_configuration():
     data = TestClient(app).get("/models").json()
-    assert len(data["models"]) == 3
+    assert len(data["models"]) >= 3
     assert data["roles"]["analyst"] != data["roles"]["validator"]

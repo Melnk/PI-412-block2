@@ -1,0 +1,11 @@
+{
+  "available": true,
+  "records": [
+    {
+      "id": "l01",
+      "source": "logs",
+      "timestamp": "2026-11-20T10:01:00Z",
+      "text": "Application TypeError in checkout calculate_total: cannot read price from a null cart item. No database timeout."
+    }
+  ]
+}

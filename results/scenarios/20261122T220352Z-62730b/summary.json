@@ -1,0 +1,106 @@
+{
+  "evaluation_id": "20261122T220352Z-62730b",
+  "scope": "Five hand-written synthetic integration scenarios, not a held-out benchmark",
+  "cases": [
+    {
+      "incident_id": "checkout-01",
+      "expected_cause": "database_pool_exhaustion",
+      "expected_status": "supported",
+      "actual_cause": "database_pool_exhaustion",
+      "actual_status": "supported",
+      "passed": true,
+      "run_id": "6bb31088cba34da39c01d4a1e8e4aa36",
+      "trace_id": "14cd718bf08542430a6a69432bb60c5f",
+      "stats": {
+        "elapsed_seconds": 64.697,
+        "tool_calls": 2,
+        "llm_calls": 5,
+        "analysis_rounds": 1,
+        "reserved_output_tokens": 736,
+        "input_tokens": 3184,
+        "output_tokens": 202,
+        "token_usage_complete": true
+      }
+    },
+    {
+      "incident_id": "checkout-02",
+      "expected_cause": "deployment_regression",
+      "expected_status": "supported",
+      "actual_cause": "deployment_regression",
+      "actual_status": "supported",
+      "passed": true,
+      "run_id": "648cc6ac08cf4d249898ebcf0d966816",
+      "trace_id": "e61e34a17812fe622e0145a7ba6c7316",
+      "stats": {
+        "elapsed_seconds": 94.717,
+        "tool_calls": 3,
+        "llm_calls": 8,
+        "analysis_rounds": 2,
+        "reserved_output_tokens": 1280,
+        "input_tokens": 5669,
+        "output_tokens": 350,
+        "token_usage_complete": true
+      }
+    },
+    {
+      "incident_id": "checkout-03",
+      "expected_cause": "unknown",
+      "expected_status": "insufficient_evidence",
+      "actual_cause": "unknown",
+      "actual_status": "insufficient_evidence",
+      "passed": true,
+      "run_id": "5e98a8e771ce4bf09a23594e76c435a4",
+      "trace_id": "24c72e4e0394b0d30b716cb6cf108b42",
+      "stats": {
+        "elapsed_seconds": 61.785,
+        "tool_calls": 3,
+        "llm_calls": 8,
+        "analysis_rounds": 2,
+        "reserved_output_tokens": 1280,
+        "input_tokens": 4884,
+        "output_tokens": 303,
+        "token_usage_complete": true
+      }
+    },
+    {
+      "incident_id": "checkout-04",
+      "expected_cause": "database_pool_exhaustion",
+      "expected_status": "supported",
+      "actual_cause": "database_pool_exhaustion",
+      "actual_status": "supported",
+      "passed": true,
+      "run_id": "b53a615a7c4545dab66e59ffa9b17e93",
+      "trace_id": "818cdb4767a7f3572b5421319e989d19",
+      "stats": {
+        "elapsed_seconds": 47.129,
+        "tool_calls": 2,
+        "llm_calls": 5,
+        "analysis_rounds": 1,
+        "reserved_output_tokens": 736,
+        "input_tokens": 3461,
+        "output_tokens": 191,
+        "token_usage_complete": true
+      }
+    },
+    {
+      "incident_id": "checkout-05",
+      "expected_cause": "application_error",
+      "expected_status": "supported",
+      "actual_cause": "application_error",
+      "actual_status": "supported",
+      "passed": true,
+      "run_id": "6d255319f77d4527b3884d145242366f",
+      "trace_id": "6f8bd43952e2e74331cd29f76a0941a1",
+      "stats": {
+        "elapsed_seconds": 41.408,
+        "tool_calls": 2,
+        "llm_calls": 5,
+        "analysis_rounds": 1,
+        "reserved_output_tokens": 736,
+        "input_tokens": 3177,
+        "output_tokens": 201,
+        "token_usage_complete": true
+      }
+    }
+  ]
+}

@@ -1,0 +1,9 @@
+{
+  "id": "checkout-02",
+  "title": "Ошибки после обновления checkout",
+  "service": "checkout",
+  "description": "Checkout began failing at 10:01. Investigate the available sources.",
+  "window_start": "2026-11-20T09:40:00Z",
+  "window_end": "2026-11-20T10:10:00Z",
+  "synthetic": true
+}

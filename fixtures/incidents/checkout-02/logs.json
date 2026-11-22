@@ -1,0 +1,11 @@
+{
+  "available": true,
+  "records": [
+    {
+      "id": "l01",
+      "source": "logs",
+      "timestamp": "2026-11-20T10:01:00Z",
+      "text": "Only new version 2.5 instances fail: required routing config is missing. Version 2.4 instances still succeed."
+    }
+  ]
+}

@@ -8,7 +8,9 @@ from incidentlab.config import LocalModel
 
 
 class LLMError(RuntimeError):
-    pass
+    def __init__(self, message, details=None):
+        super().__init__(message)
+        self.details = details
 
 
 class LocalLLM:
@@ -29,25 +31,28 @@ class LocalLLM:
                 "name": "answer", "strict": True, "schema": schema}},
         }
         started = time.perf_counter()
+        details = {}
         try:
             with httpx.Client(timeout=self.timeout, transport=self.transport, trust_env=False) as client:
                 response = client.post(self.model.base_url + "/v1/chat/completions", json=payload)
                 response.raise_for_status()
                 raw = response.json()
             choice = raw["choices"][0]
+            details = {"raw_output": choice["message"].get("content"),
+                       "usage": raw.get("usage", {}), "finish_reason": choice.get("finish_reason")}
             if choice.get("finish_reason") == "length":
-                raise LLMError("Model response exhausted its output budget")
+                raise LLMError("Model response exhausted its output budget", details)
             content = choice["message"]["content"]
             parsed = json.loads(content)
             if not isinstance(parsed, dict):
-                raise LLMError("Expected a JSON object")
+                raise LLMError("Expected a JSON object", details)
             return {"model": self.model.id, "family": self.model.family, "answer": parsed,
                     "raw_output": content, "usage": raw.get("usage", {}),
                     "latency_ms": round((time.perf_counter() - started) * 1000, 2)}
         except LLMError:
             raise
         except (httpx.HTTPError, ValueError, KeyError, IndexError, TypeError) as error:
-            raise LLMError(f"Local model {self.model.id} failed: {type(error).__name__}") from error
+            raise LLMError(f"Local model {self.model.id} failed: {type(error).__name__}", details) from error
 
 
 def probe(model: LocalModel, timeout=2.0) -> dict:

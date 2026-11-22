@@ -3,9 +3,38 @@
   "context_tokens": 4096,
   "threads": 4,
   "models": [
-    {"id": "qwen", "family": "Qwen", "display_name": "Qwen3.5 0.8B Q4_0", "filename": "Qwen3.5-0.8B-Q4_0.gguf", "base_url": "http://127.0.0.1:8121"},
-    {"id": "liquid", "family": "LFM", "display_name": "LFM2.5 1.2B Instruct Q8_0", "filename": "LFM2.5-1.2B-Instruct-Q8_0.gguf", "base_url": "http://127.0.0.1:8122"},
-    {"id": "smol", "family": "SmolLM", "display_name": "SmolLM3 3B Q4_K_M", "filename": "SmolLM3-Q4_K_M.gguf", "base_url": "http://127.0.0.1:8123"}
+    {
+      "id": "qwen",
+      "family": "Qwen",
+      "display_name": "Qwen3.5 0.8B Q4_0",
+      "filename": "Qwen3.5-0.8B-Q4_0.gguf",
+      "base_url": "http://127.0.0.1:8121"
+    },
+    {
+      "id": "liquid",
+      "family": "LFM",
+      "display_name": "LFM2.5 1.2B Instruct Q8_0",
+      "filename": "LFM2.5-1.2B-Instruct-Q8_0.gguf",
+      "base_url": "http://127.0.0.1:8122"
+    },
+    {
+      "id": "smol",
+      "family": "SmolLM",
+      "display_name": "SmolLM3 3B Q4_K_M",
+      "filename": "SmolLM3-Q4_K_M.gguf",
+      "base_url": "http://127.0.0.1:8123"
+    },
+    {
+      "id": "qwen4",
+      "family": "Qwen",
+      "display_name": "Qwen3.5 4B Q4_K_M",
+      "filename": "Qwen3.5-4B-Q4_K_M.gguf",
+      "base_url": "http://127.0.0.1:8124"
+    }
   ],
-  "roles": {"planner": "qwen", "analyst": "liquid", "validator": "smol"}
+  "roles": {
+    "planner": "liquid",
+    "analyst": "smol",
+    "validator": "qwen4"
+  }
 }

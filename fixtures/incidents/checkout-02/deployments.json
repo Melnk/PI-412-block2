@@ -1,0 +1,11 @@
+{
+  "available": true,
+  "records": [
+    {
+      "id": "d01",
+      "source": "deployments",
+      "timestamp": "2026-11-20T10:00:00Z",
+      "text": "Deployment changed checkout from version 2.4 to version 2.5 at 10:00; rollout started successfully."
+    }
+  ]
+}

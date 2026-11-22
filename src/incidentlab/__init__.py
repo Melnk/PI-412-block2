@@ -1,1 +1,1 @@
-"""IncidentLab infrastructure. Agent workflow is the next development stage."""
+"""IncidentLab: bounded, evidence-driven investigation of synthetic incidents."""

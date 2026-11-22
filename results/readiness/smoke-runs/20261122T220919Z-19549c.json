@@ -1,0 +1,272 @@
+{
+  "scope": "Development readiness only; 3 hand-written cases per model, no intelligence ranking claims",
+  "timestamp_utc": "2026-11-22T22:09:43.757150+00:00",
+  "platform": "macOS-26.3.1-x86_64-i386-64bit",
+  "engine": "llama.cpp b12359",
+  "runs": [
+    {
+      "model": "qwen",
+      "family": "Qwen",
+      "case": "extract",
+      "weight_file": "Qwen3.5-0.8B-Q4_0.gguf",
+      "prompt": "Read this data: service=checkout, errors=17. Return only the service name in answer.",
+      "expected": "checkout",
+      "answer": {
+        "answer": "checkout"
+      },
+      "raw_output": "{\"answer\": \"checkout\"}",
+      "usage": {
+        "completion_tokens": 7,
+        "prompt_tokens": 54,
+        "total_tokens": 61,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        }
+      },
+      "latency_ms": 1059.56,
+      "passed": true
+    },
+    {
+      "model": "qwen",
+      "family": "Qwen",
+      "case": "evidence",
+      "weight_file": "Qwen3.5-0.8B-Q4_0.gguf",
+      "prompt": "Given only: CPU=20%, database connections=100/100, log=database connection timeout. Choose the strongest supported issue: database or CPU. Return database or CPU in answer.",
+      "expected": "database",
+      "answer": {
+        "answer": "database"
+      },
+      "raw_output": "{\"answer\": \"database\"}",
+      "usage": {
+        "completion_tokens": 7,
+        "prompt_tokens": 75,
+        "total_tokens": 82,
+        "prompt_tokens_details": {
+          "cached_tokens": 21
+        }
+      },
+      "latency_ms": 527.51,
+      "passed": true
+    },
+    {
+      "model": "qwen",
+      "family": "Qwen",
+      "case": "abstain",
+      "weight_file": "Qwen3.5-0.8B-Q4_0.gguf",
+      "prompt": "The only evidence is 'the API failed'. What is the exact root cause? If evidence is insufficient, put unknown in answer. Do not invent details.",
+      "expected": "unknown",
+      "answer": {
+        "answer": "The API failed due to a missing or invalid authentication token."
+      },
+      "raw_output": "{\n  \"answer\": \"The API failed due to a missing or invalid authentication token.\"\n}",
+      "usage": {
+        "completion_tokens": 22,
+        "prompt_tokens": 64,
+        "total_tokens": 86,
+        "prompt_tokens_details": {
+          "cached_tokens": 21
+        }
+      },
+      "latency_ms": 922.05,
+      "passed": false
+    },
+    {
+      "model": "liquid",
+      "family": "LFM",
+      "case": "extract",
+      "weight_file": "LFM2.5-1.2B-Instruct-Q8_0.gguf",
+      "prompt": "Read this data: service=checkout, errors=17. Return only the service name in answer.",
+      "expected": "checkout",
+      "answer": {
+        "answer": "checkout"
+      },
+      "raw_output": "{\"answer\": \"checkout\"}",
+      "usage": {
+        "completion_tokens": 9,
+        "prompt_tokens": 51,
+        "total_tokens": 60,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        }
+      },
+      "latency_ms": 1410.15,
+      "passed": true
+    },
+    {
+      "model": "liquid",
+      "family": "LFM",
+      "case": "evidence",
+      "weight_file": "LFM2.5-1.2B-Instruct-Q8_0.gguf",
+      "prompt": "Given only: CPU=20%, database connections=100/100, log=database connection timeout. Choose the strongest supported issue: database or CPU. Return database or CPU in answer.",
+      "expected": "database",
+      "answer": {
+        "answer": "database"
+      },
+      "raw_output": "{\"answer\": \"database\"}",
+      "usage": {
+        "completion_tokens": 9,
+        "prompt_tokens": 68,
+        "total_tokens": 77,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        }
+      },
+      "latency_ms": 1449.15,
+      "passed": true
+    },
+    {
+      "model": "liquid",
+      "family": "LFM",
+      "case": "abstain",
+      "weight_file": "LFM2.5-1.2B-Instruct-Q8_0.gguf",
+      "prompt": "The only evidence is 'the API failed'. What is the exact root cause? If evidence is insufficient, put unknown in answer. Do not invent details.",
+      "expected": "unknown",
+      "answer": {
+        "answer": "unknown"
+      },
+      "raw_output": "{\n  \"answer\": \"unknown\"\n}",
+      "usage": {
+        "completion_tokens": 10,
+        "prompt_tokens": 61,
+        "total_tokens": 71,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        }
+      },
+      "latency_ms": 1491.84,
+      "passed": true
+    },
+    {
+      "model": "smol",
+      "family": "SmolLM",
+      "case": "extract",
+      "weight_file": "SmolLM3-Q4_K_M.gguf",
+      "prompt": "Read this data: service=checkout, errors=17. Return only the service name in answer.",
+      "expected": "checkout",
+      "answer": {
+        "answer": "checkout"
+      },
+      "raw_output": "{\n  \"answer\": \"checkout\"\n}",
+      "usage": {
+        "completion_tokens": 14,
+        "prompt_tokens": 87,
+        "total_tokens": 101,
+        "prompt_tokens_details": {
+          "cached_tokens": 39
+        }
+      },
+      "latency_ms": 2069.37,
+      "passed": true
+    },
+    {
+      "model": "smol",
+      "family": "SmolLM",
+      "case": "evidence",
+      "weight_file": "SmolLM3-Q4_K_M.gguf",
+      "prompt": "Given only: CPU=20%, database connections=100/100, log=database connection timeout. Choose the strongest supported issue: database or CPU. Return database or CPU in answer.",
+      "expected": "database",
+      "answer": {
+        "answer": "database"
+      },
+      "raw_output": "{\n  \"answer\": \"database\"\n}",
+      "usage": {
+        "completion_tokens": 14,
+        "prompt_tokens": 104,
+        "total_tokens": 118,
+        "prompt_tokens_details": {
+          "cached_tokens": 58
+        }
+      },
+      "latency_ms": 2145.71,
+      "passed": true
+    },
+    {
+      "model": "smol",
+      "family": "SmolLM",
+      "case": "abstain",
+      "weight_file": "SmolLM3-Q4_K_M.gguf",
+      "prompt": "The only evidence is 'the API failed'. What is the exact root cause? If evidence is insufficient, put unknown in answer. Do not invent details.",
+      "expected": "unknown",
+      "answer": {
+        "answer": "unknown"
+      },
+      "raw_output": "{\n  \"answer\": \"unknown\"\n}",
+      "usage": {
+        "completion_tokens": 14,
+        "prompt_tokens": 98,
+        "total_tokens": 112,
+        "prompt_tokens_details": {
+          "cached_tokens": 58
+        }
+      },
+      "latency_ms": 2020.24,
+      "passed": true
+    },
+    {
+      "model": "qwen4",
+      "family": "Qwen",
+      "case": "extract",
+      "weight_file": "Qwen3.5-4B-Q4_K_M.gguf",
+      "prompt": "Read this data: service=checkout, errors=17. Return only the service name in answer.",
+      "expected": "checkout",
+      "answer": {
+        "answer": "checkout"
+      },
+      "raw_output": "{\n  \"answer\": \"checkout\"\n}",
+      "usage": {
+        "completion_tokens": 12,
+        "prompt_tokens": 54,
+        "total_tokens": 66,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        }
+      },
+      "latency_ms": 3437.16,
+      "passed": true
+    },
+    {
+      "model": "qwen4",
+      "family": "Qwen",
+      "case": "evidence",
+      "weight_file": "Qwen3.5-4B-Q4_K_M.gguf",
+      "prompt": "Given only: CPU=20%, database connections=100/100, log=database connection timeout. Choose the strongest supported issue: database or CPU. Return database or CPU in answer.",
+      "expected": "database",
+      "answer": {
+        "answer": "database"
+      },
+      "raw_output": "{\n  \"answer\": \"database\"\n}",
+      "usage": {
+        "completion_tokens": 12,
+        "prompt_tokens": 75,
+        "total_tokens": 87,
+        "prompt_tokens_details": {
+          "cached_tokens": 21
+        }
+      },
+      "latency_ms": 3874.43,
+      "passed": true
+    },
+    {
+      "model": "qwen4",
+      "family": "Qwen",
+      "case": "abstain",
+      "weight_file": "Qwen3.5-4B-Q4_K_M.gguf",
+      "prompt": "The only evidence is 'the API failed'. What is the exact root cause? If evidence is insufficient, put unknown in answer. Do not invent details.",
+      "expected": "unknown",
+      "answer": {
+        "answer": "unknown"
+      },
+      "raw_output": "{\n  \"answer\": \"unknown\"\n}",
+      "usage": {
+        "completion_tokens": 12,
+        "prompt_tokens": 64,
+        "total_tokens": 76,
+        "prompt_tokens_details": {
+          "cached_tokens": 21
+        }
+      },
+      "latency_ms": 3669.81,
+      "passed": true
+    }
+  ]
+}

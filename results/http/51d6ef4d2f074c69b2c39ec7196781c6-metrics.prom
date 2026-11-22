@@ -1,0 +1,73 @@
+# HELP python_gc_objects_collected_total Objects collected during gc
+# TYPE python_gc_objects_collected_total counter
+python_gc_objects_collected_total{generation="0"} 1450.0
+python_gc_objects_collected_total{generation="1"} 77.0
+python_gc_objects_collected_total{generation="2"} 26.0
+# HELP python_gc_objects_uncollectable_total Uncollectable objects found during GC
+# TYPE python_gc_objects_uncollectable_total counter
+python_gc_objects_uncollectable_total{generation="0"} 0.0
+python_gc_objects_uncollectable_total{generation="1"} 0.0
+python_gc_objects_uncollectable_total{generation="2"} 0.0
+# HELP python_gc_collections_total Number of times this generation was collected
+# TYPE python_gc_collections_total counter
+python_gc_collections_total{generation="0"} 269.0
+python_gc_collections_total{generation="1"} 24.0
+python_gc_collections_total{generation="2"} 2.0
+# HELP python_info Python platform information
+# TYPE python_info gauge
+python_info{implementation="CPython",major="3",minor="12",patchlevel="14",version="3.12.14"} 1.0
+# HELP incidentlab_investigations_total Completed investigations
+# TYPE incidentlab_investigations_total counter
+incidentlab_investigations_total{status="supported"} 1.0
+# HELP incidentlab_investigations_created Completed investigations
+# TYPE incidentlab_investigations_created gauge
+incidentlab_investigations_created{status="supported"} 1.795385447168763e+09
+# HELP incidentlab_investigation_seconds Investigation wall time
+# TYPE incidentlab_investigation_seconds histogram
+incidentlab_investigation_seconds_bucket{le="1.0"} 0.0
+incidentlab_investigation_seconds_bucket{le="5.0"} 0.0
+incidentlab_investigation_seconds_bucket{le="10.0"} 0.0
+incidentlab_investigation_seconds_bucket{le="20.0"} 0.0
+incidentlab_investigation_seconds_bucket{le="40.0"} 1.0
+incidentlab_investigation_seconds_bucket{le="60.0"} 1.0
+incidentlab_investigation_seconds_bucket{le="120.0"} 1.0
+incidentlab_investigation_seconds_bucket{le="180.0"} 1.0
+incidentlab_investigation_seconds_bucket{le="300.0"} 1.0
+incidentlab_investigation_seconds_bucket{le="+Inf"} 1.0
+incidentlab_investigation_seconds_count 1.0
+incidentlab_investigation_seconds_sum 38.708
+# HELP incidentlab_investigation_seconds_created Investigation wall time
+# TYPE incidentlab_investigation_seconds_created gauge
+incidentlab_investigation_seconds_created 1.795385403727356e+09
+# HELP incidentlab_llm_calls_total Attempted LLM calls
+# TYPE incidentlab_llm_calls_total counter
+incidentlab_llm_calls_total{model="liquid",role="planner"} 3.0
+incidentlab_llm_calls_total{model="smol",role="analyst"} 1.0
+incidentlab_llm_calls_total{model="qwen4",role="validator"} 1.0
+# HELP incidentlab_llm_calls_created Attempted LLM calls
+# TYPE incidentlab_llm_calls_created gauge
+incidentlab_llm_calls_created{model="liquid",role="planner"} 1.7953854084753122e+09
+incidentlab_llm_calls_created{model="smol",role="analyst"} 1.795385424439359e+09
+incidentlab_llm_calls_created{model="qwen4",role="validator"} 1.7953854321007092e+09
+# HELP incidentlab_llm_tokens_total Reported LLM tokens
+# TYPE incidentlab_llm_tokens_total counter
+incidentlab_llm_tokens_total{direction="input",model="liquid"} 1678.0
+incidentlab_llm_tokens_total{direction="output",model="liquid"} 117.0
+incidentlab_llm_tokens_total{direction="input",model="smol"} 677.0
+incidentlab_llm_tokens_total{direction="output",model="smol"} 37.0
+incidentlab_llm_tokens_total{direction="input",model="qwen4"} 829.0
+incidentlab_llm_tokens_total{direction="output",model="qwen4"} 46.0
+# HELP incidentlab_llm_tokens_created Reported LLM tokens
+# TYPE incidentlab_llm_tokens_created gauge
+incidentlab_llm_tokens_created{direction="input",model="liquid"} 1.795385413144979e+09
+incidentlab_llm_tokens_created{direction="output",model="liquid"} 1.7953854131450071e+09
+incidentlab_llm_tokens_created{direction="input",model="smol"} 1.7953854320976598e+09
+incidentlab_llm_tokens_created{direction="output",model="smol"} 1.795385432097682e+09
+incidentlab_llm_tokens_created{direction="input",model="qwen4"} 1.795385447166879e+09
+incidentlab_llm_tokens_created{direction="output",model="qwen4"} 1.7953854471669009e+09
+# HELP incidentlab_process_cpu_percent Process CPU usage; may exceed 100 on multiple cores
+# TYPE incidentlab_process_cpu_percent gauge
+incidentlab_process_cpu_percent 0.0
+# HELP incidentlab_process_memory_bytes Resident RAM used by the API process
+# TYPE incidentlab_process_memory_bytes gauge
+incidentlab_process_memory_bytes 8.861696e+07

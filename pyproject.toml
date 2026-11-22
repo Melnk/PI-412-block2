@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "pi412-block2"
-version = "0.1.0"
+version = "0.2.0"
 description = "IncidentLab and an independent modern RecSys study for KFU SWE block 2"
 requires-python = ">=3.12,<3.14"
 dependencies = [
@@ -23,9 +23,13 @@ ml = [
   "torch>=2.6,<3; platform_system != 'Darwin' or platform_machine != 'x86_64'",
 ]
 observability = ["arize-phoenix==22.0.1"]
+report = ["python-docx>=1.1,<2"]
 
 [tool.setuptools.packages.find]
 where = ["src"]
+
+[tool.setuptools.package-data]
+incidentlab = ["static/*"]
 
 [tool.pytest.ini_options]
 testpaths = ["tests"]

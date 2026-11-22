@@ -25,5 +25,14 @@
     "sha256": "8334b850b7bd46238c16b0c550df2138f0889bf433809008cc17a8b05761863e",
     "bytes": 1915305312,
     "source": "https://huggingface.co/ggml-org/SmolLM3-3B-GGUF"
+  },
+  {
+    "name": "qwen4",
+    "repository": "ggml-org/Qwen3.5-4B-GGUF",
+    "revision": "8d43d974efc48399cb58957ad49c8b26bf5a109c",
+    "filename": "Qwen3.5-4B-Q4_K_M.gguf",
+    "sha256": "217002fa8008ef4fc6d548353a3aebef055a96e6ff8e0e2c0953ef8254a89c14",
+    "bytes": 3032091584,
+    "source": "https://huggingface.co/ggml-org/Qwen3.5-4B-GGUF"
   }
 ]
